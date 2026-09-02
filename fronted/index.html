@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Code Explainer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <div>
+                    <h1>AI Code Explainer</h1>
+                    <p>Understand. Learn. Improve.</p>
+                </div>
+            </div>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                AI Ready
+            </div>
+        </header>
+
+
+        <!-- Main -->
+        <main class="main">
+
+            <!-- Code Section -->
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Code Input</h2>
+                        <p>Paste your code and let AI explain it.</p>
+                    </div>
+
+                    <select id="language">
+                        <option value="python">Python</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="java">Java</option>
+                        <option value="cpp">C++</option>
+                        <option value="c">C</option>
+                        <option value="csharp">C#</option>
+                    </select>
+
+                </div>
+
+
+                <div class="editor">
+
+                    <div class="editor-top">
+                        <div class="window-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <span id="lineCount">0 lines</span>
+                    </div>
+
+                    <textarea
+                        id="code"
+                        spellcheck="false"
+                        placeholder="// Paste your code here..."
+                    ></textarea>
+
+                </div>
+
+
+               <div class="actions">
+
+    <button
+        class="clear-btn"
+        onclick="clearCode()">
+        🗑 Clear
+    </button>
+
+    <div class="button-group">
+
+        <button
+            id="explainBtn"
+            class="explain-btn"
+            onclick="explainCode()">
+            ✨ Explain Code
+        </button>
+
+        <button
+            id="bugsBtn"
+            class="bugs-btn"
+            onclick="findBugs()">
+            🐛 Find Bugs
+        </button>
+
+    </div>
+
+</div>
+
+            </section>
+
+
+            <!-- Loading -->
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <span>AI is analyzing your code...</span>
+            </div>
+
+
+            <!-- Result -->
+            <section id="result" class="result panel">
+
+                <div class="result-header">
+
+                    <div>
+                        <h2>🧠 AI Analysis</h2>
+                        <p>Here's what the AI found in your code.</p>
+                    </div>
+
+                    <button
+                        class="copy-btn"
+                        onclick="copyExplanation()">
+                        📋 Copy
+                    </button>
+
+                </div>
+
+                <div id="output" class="output"></div>
+
+            </section>
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer>
+            Built with <strong>FastAPI</strong> + <strong>Gemini AI</strong>
+        </footer>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
